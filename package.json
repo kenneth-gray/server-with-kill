@@ -1,0 +1,71 @@
+{
+  "name": "server-with-kill",
+  "version": "0.0.0-development",
+  "description": "Add kill method to http server",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "/lib"
+  ],
+  "scripts": {
+    "commit": "git-cz",
+    "build": "rimraf lib && tsc -p .",
+    "lint": "eslint src/*.ts && eslint example/*.ts",
+    "example": "ts-node example",
+    "semantic-release": "semantic-release"
+  },
+  "keywords": [
+    "server"
+  ],
+  "author": "Kenneth Gray",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/express": "^4.17.1",
+    "@typescript-eslint/eslint-plugin": "^2.3.3",
+    "@typescript-eslint/parser": "^2.3.3",
+    "commitizen": "^4.0.3",
+    "cz-conventional-changelog": "^3.0.2",
+    "eslint": "^6.5.1",
+    "eslint-config-prettier": "^6.4.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "express": "^4.17.1",
+    "prettier": "^1.18.2",
+    "rimraf": "^3.0.0",
+    "semantic-release": "^15.13.24",
+    "ts-node": "^8.4.1",
+    "typescript": "^3.6.4"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "release": {
+    "analyzeCommits": {
+      "preset": "angular",
+      "releaseRules": [
+        {
+          "type": "docs",
+          "scope": "readme",
+          "release": "patch"
+        },
+        {
+          "type": "build",
+          "release": "patch"
+        },
+        {
+          "type": "refactor",
+          "release": "patch"
+        },
+        {
+          "type": "improvement",
+          "release": "patch"
+        }
+      ]
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kenneth-gray/server-with-kill.git"
+  }
+}
